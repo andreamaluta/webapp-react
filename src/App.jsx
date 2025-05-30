@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DefaultLayout from './layouts/DefaultLayout'
+import HomePage from './pages/HomePage'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
-            <Route index element={<h1>Homepage</h1>}></Route>
+            <Route index element={<HomePage />}></Route>
             <Route path='/movies/:id' element={<h1>Dettaglio pagina</h1>}></Route>
           </Route>
         </Routes>
