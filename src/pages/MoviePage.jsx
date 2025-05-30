@@ -12,6 +12,22 @@ const MoviePage = () => {
                     </div>
                 </div>
             </div>
+            <hr />
+            <div className='d-flex align-items-center justify-content-between py-3 '>
+                <h3>Recensioni</h3>
+                <p>Media recensioni</p>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <div className="card">
+                        <p className='p-2'>recensione</p>
+                        <div className='px-2 pb-2'>
+                            <span><b>Voto</b></span>
+                            <p>Nome Utente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
