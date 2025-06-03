@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import axios from 'axios';
 
 const initialMovies = [
     {
@@ -47,13 +48,10 @@ const initialMovies = [
 const MoviePage = () => {
 
     const { id } = useParams();
-    const [movies, setMovies] = useState(initialMovies);
-
     const [movie, setMovie] = useState([]);
 
     const fetchMovie = () => {
-        const findMovie = movies.find((actualMovie) => actualMovie.id === parseInt(id));
-        setMovie(findMovie);
+        axios.get(`http://127.0.0.1:3000/films/${id}`).then((resp) => { setMovie(resp.data) })
     }
 
     useEffect(() => {
@@ -70,8 +68,8 @@ const MoviePage = () => {
                 </div>
                 <div className='col-6 my-4'>
                     <div className='mx-3'>
-                        <h1>{movie.titolo}</h1>
-                        <p>{movie.descrizione}</p>
+                        <h1>{movie.title}</h1>
+                        <p>{movie.abstract}</p>
                     </div>
 
                 </div>
