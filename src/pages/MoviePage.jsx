@@ -20,10 +20,10 @@ const MoviePage = () => {
     return (
         <>
             <div className="row d-flex ">
-                <div className="col-6 my-4">
-                    <img src={movie.image} alt="" />
+                <div className="col-6 my-4 text-center">
+                    <img src={`/${movie.image}`} alt="" className='detail-image' />
                 </div>
-                <div className='col-6 my-4'>
+                <div className='col-6 my-4 d-flex align-items-center'>
                     <div className='mx-3'>
                         <h1>{movie.title}</h1>
                         <p>{movie.abstract}</p>
