@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import MovieCard from '../components/MovieCard';
+import axios from 'axios';
 
 const initialMovies = [
     {
@@ -51,6 +52,14 @@ const initialMovies = [
 const HomePage = () => {
 
     const [movies, setMovies] = useState(initialMovies)
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:3000/films/').then((resp) => {
+            console.log(resp.data);
+        }).catch((err) => {
+            console.log(err);
+        })
+    })
 
     return (
         <>
