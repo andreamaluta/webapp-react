@@ -14,7 +14,7 @@ const MovieCard = ({ movie }) => {
                         <h3>{titolo}</h3>
                         <h4>{regista}</h4>
                         <p>{descrizione}</p>
-                        <Link className='btn btn-primary' to='/movies/1'>Leggi di più</Link>
+                        <Link className='btn btn-primary' to={`/movies/${id}`}>Leggi di più</Link>
                     </div>
                 </div>
             </div>
